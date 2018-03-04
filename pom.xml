@@ -24,6 +24,18 @@
 	</dependencies>
 
 	<packaging>pom</packaging>
-	<groupId>io.scipionyx.analyticworkbench</groupId>
+	<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
 	<artifactId>parent</artifactId>
+	<modules>
+		<module>api</module>
+		<module>backend</module>
+		<module>config-server</module>
+		<module>docker</module>
+		<module>elastic</module>
+		<module>frontend</module>
+		<module>gateway</module>
+		<module>geolocation</module>
+		<module>json</module>
+		<module>model</module>
+	</modules>
 </project>

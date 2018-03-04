@@ -8,8 +8,8 @@
 	<name>Analytic Workbench - Infra - Frontend</name>
 
 	<parent>
-		<groupId>io.scipionyx.analyticworkbench.infra</groupId>
-		<artifactId>model</artifactId>
+		<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
+		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
