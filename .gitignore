@@ -27,4 +27,4 @@ hs_err_pid*
 .classpath
 /target/*.*
 target/*.*
-target/*
+target/**/*
