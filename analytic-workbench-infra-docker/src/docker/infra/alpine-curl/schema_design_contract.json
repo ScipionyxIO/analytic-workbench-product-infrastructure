@@ -1,0 +1,71 @@
+{
+   "_id": "_design/contract",
+   "language": "javascript",
+   "views": {
+       "all": {
+           "map": "function(doc) {\n\tif (doc.type == 'contract') {\n\t\temit(doc._id, doc);\n\t}\n}"
+       },
+       "byCustomer": {
+           "map": "function(doc) {\n\tif (doc.type == 'contract') {\n\t\temit(doc.customerId, {id: doc._id, contractName: doc.contractName});\n\t}\n}"
+       },
+       "byGroup": {
+           "map": "function(doc) {\n\tif (doc.type == 'contract') {\n\t\temit(doc.authGroup, doc);\n\t}\n}"
+       },
+       "names": {
+           "map": "function(doc) { if (doc.type == 'contract') { var mrn = doc.mrn; if(!mrn) { mrn = 'mrn:deals:contract:' + doc._id;} emit(doc._id, { mrn: mrn, contractName: doc.contractName, customerId: doc.customerId, authGroup: doc.authGroup}); } }"
+       },
+       "namesByGroup": {
+           "map": "function(doc) { if (doc.type == 'contract') { var mrn = doc.mrn; if(!mrn) { mrn = 'mrn:deals:contract:' + doc._id;} emit(doc.authGroup, {mrn: mrn, contractName: doc.contractName, customerId: doc.customerId, authGroup: doc.authGroup}); } }"
+       },
+       "rights": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.rights != null) { var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','categories','channels','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.rights) { emit(doc._id+'-'+doc.rights[idx].id, {data: doc.rights[idx], contract: newDoc}); } } }"
+       },
+       "pricingTiers": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.pricingTiers != null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','categories','channels','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.pricingTiers) { emit(doc._id+'-'+doc.pricingTiers[idx].id, {data: doc.pricingTiers[idx], contract: newDoc}); } } }"
+       },
+       "minimumGuarantees": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.minimumGuarantees != null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','categories','channels','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.minimumGuarantees) { emit(doc._id+'-'+doc.minimumGuarantees[idx].id, {data: doc.minimumGuarantees[idx], contract: newDoc}); } } }"
+       },
+       "rates": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.rates != null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','categories','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.rates) { emit(doc._id+'-'+doc.rates[idx].id, {data: doc.rates[idx], contract: newDoc}); } } }"
+       },
+       "provisions": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.provisions != null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','categories','channels','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.provisions) { emit(doc._id+'-'+doc.provisions[idx].id, {data: doc.provisions[idx], contract: newDoc}); } } }"
+       },
+       "options": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.options != null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','categories','channels','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.options) { emit(doc._id+'-'+doc.options[idx].id, {data: doc.options[idx], contract: newDoc}); } } }"
+       },
+       "grants": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.grants != null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','categories','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0 || field == 'provisions'){ newDoc[field] = doc[field]; } }  for (var idx in doc.grants) { emit(doc._id+'-'+doc.grants[idx].id, {data: doc.grants[idx], contract: newDoc}); } } }"
+       },
+       "grantNames": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.grants != null) { for (var idx in doc.grants) {emit(doc._id + '-' + doc.grants[idx].id , { mrn: 'mrn:deals:grant:' + doc._id + '-' + doc.grants[idx].id, rightName: doc.grants[idx].rightName}); } } }"
+       },
+       "channels": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.channels != null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','categories','channels','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.channels) { emit(doc._id+'-'+doc.channels[idx].id, {data: doc.channels[idx], contract: newDoc}); } } }"
+       },
+       "categories": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.categories != null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','categories','channels','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.categories) { emit(doc._id+'-'+doc.categories[idx].id, {data: doc.categories[idx], contract: newDoc}); } } }"
+       },
+       "content": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.content != null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','categories','channels','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.content) { emit(doc._id+'-'+doc.content[idx].id, {data: doc.content[idx], contract: newDoc}); } } }"
+       },
+       "restrictions": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.restrictions != null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','contentTitles','categories','channels','content','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.restrictions) { emit(doc._id+'-'+doc.restrictions[idx].id, {data: doc.restrictions[idx], contract: newDoc}); } } }"
+       },
+       "contentTitles": {
+           "map": "function(doc) { if (doc.type == 'contract' && doc.contentTitles!= null) {  var newDoc = {};  for (var field in doc) { if(['_attachments','auditHistory','contentTitles','categories','channels','grants','minimumGuarantees','options','pricingTiers','provisions','rates','rights','type','workflows','deductions','exclusions','restrictions'].indexOf(field) < 0){ newDoc[field] = doc[field]; } }  for (var idx in doc.contentTitles) { emit(doc._id+'-'+doc.contentTitles[idx].id, {data: doc.contentTitles[idx], contract: newDoc}); } } }"
+       },
+       "deals": {
+           "map": "function(doc) {\n\tif (doc.type == 'contract') {\n        if ((doc.copiedFromId == null && (doc.legalApproval == 'Pending' || doc.legalApproval == 'Active')) || (doc.copiedFromId != null && doc.legalApproval == 'Active')) {\n            emit(doc.deal, doc);\n        }\n\t}\n}"
+       }
+   },
+   "fulltext": {
+       "by_all": {
+           "index": "function(doc) { if (doc.type == 'contract') { var ret = new Document(); function idx(obj) { for (var key in obj) { switch (typeof obj[key]) { case 'object': idx(obj[key]); break; case 'function': break; default:  ret.add(obj[key]); ret.add(obj[key], {\"field\": key, \"store\": \"yes\"}); break; } } }; idx(doc); if (doc._attachments) { for (var i in doc._attachments) { ret.attachment(\"default\", i); } } return ret; } else { return null; } }"
+       },
+       "by_category": {
+           "index": "function(doc) { if (doc.type == 'contract') { var ret = new Array(); function idx(obj) { var index = new Document(); for (var key in obj) { switch (typeof obj[key]) { case 'object': idx(obj[key]); break; case 'function': break; default: index.add(obj[key]); index.add(obj[key], {\"field\": key, \"store\": \"yes\"}); break; } } return index; }; for (var category in doc.categories) { ret.push(idx(doc.categories[category])); } return ret; } else { return null; } }"
+       }
+   }
+}

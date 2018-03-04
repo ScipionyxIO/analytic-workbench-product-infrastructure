@@ -1,0 +1,8 @@
+/Users/RenatoMendes/git/scipionyx/AnalyticWorkbench/Product/analytic-workbench-infra/analytic-workbench-infra-backend/src/main/java/io/scipionyx/analyticworkbench/backend/infra/repository/ScipionyxRepository.java
+/Users/RenatoMendes/git/scipionyx/AnalyticWorkbench/Product/analytic-workbench-infra/analytic-workbench-infra-backend/src/main/java/io/scipionyx/analyticworkbench/backend/infra/AbstractService.java
+/Users/RenatoMendes/git/scipionyx/AnalyticWorkbench/Product/analytic-workbench-infra/analytic-workbench-infra-backend/src/main/java/io/scipionyx/analyticworkbench/backend/infra/security/UserRepository.java
+/Users/RenatoMendes/git/scipionyx/AnalyticWorkbench/Product/analytic-workbench-infra/analytic-workbench-infra-backend/src/main/java/io/scipionyx/analyticworkbench/backend/infra/rest/AbstractRestController.java
+/Users/RenatoMendes/git/scipionyx/AnalyticWorkbench/Product/analytic-workbench-infra/analytic-workbench-infra-backend/src/main/java/io/scipionyx/analyticworkbench/backend/infra/security/UserService.java
+/Users/RenatoMendes/git/scipionyx/AnalyticWorkbench/Product/analytic-workbench-infra/analytic-workbench-infra-backend/src/main/java/io/scipionyx/analyticworkbench/backend/infra/security/SecurityConfig.java
+/Users/RenatoMendes/git/scipionyx/AnalyticWorkbench/Product/analytic-workbench-infra/analytic-workbench-infra-backend/src/main/java/io/scipionyx/analyticworkbench/backend/infra/security/EnableMicroserviceSecurity.java
+/Users/RenatoMendes/git/scipionyx/AnalyticWorkbench/Product/analytic-workbench-infra/analytic-workbench-infra-backend/src/main/java/io/scipionyx/analyticworkbench/backend/infra/rest/AbstractEventHander.java

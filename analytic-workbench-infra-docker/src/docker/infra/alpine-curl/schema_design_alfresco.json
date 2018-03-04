@@ -1,0 +1,21 @@
+{
+   "_id": "_design/alfresco",
+   "views": {
+       "workflows": {
+           "map": "function(doc) {if (doc.type == 'workflow' && !doc.deleted) {emit(doc.workflowName, doc);}}"
+       },
+       "deleted_worflows": {
+           "map": "function(doc) {if (doc.type == 'workflow' && doc.deleted) {emit(doc.workflowName, doc);}}"
+       },
+       "workflow_config": {
+           "map": "function(doc) {if (doc.type == 'workflow_config') {emit(doc._id, doc);}}"
+       },
+       "userGroups": {
+           "map": "function(doc) {if (doc.type == 'user_group') {emit(doc.name, doc);}}"
+       },
+       "workflowsUsers": {
+           "map": "function(doc) {if (doc.type == 'workflow') {emit([doc.processDefinitionKey, 0], doc);}if(doc.type == 'user_group') {emit([doc.name, 1], doc);}}"
+       }
+   },
+   "language": "javascript"
+}

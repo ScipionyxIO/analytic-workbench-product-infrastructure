@@ -1,0 +1,4 @@
+io.scipionyx.analyticworkbench.backend.infra
+io.scipionyx.analyticworkbench.backend.infra.repository
+io.scipionyx.analyticworkbench.backend.infra.rest
+io.scipionyx.analyticworkbench.backend.infra.security

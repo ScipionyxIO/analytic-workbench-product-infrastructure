@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>docker</artifactId>
+
+	<packaging>pom</packaging>
+
+	<name>Analytic Workbench - Infra - Docker</name>
+
+	<parent>
+		<groupId>io.scipionyx.analyticworkbench.infra</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>1.0.0</version>
+				<executions>
+					<execution>
+						<id>spring-boot</id>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+						<configuration>
+							<dockerDirectory>${project.basedir}/src/docker/spring-boot</dockerDirectory>
+							<serverId>${docker.registry.server.id}</serverId>
+							<imageName>${docker.registry.server.id}/analytic-workbench/product/analytic-workbench-infra/spring-boot</imageName>
+							<imageTags>
+								<imageTag>${project.version}</imageTag>
+								<imageTag>latest</imageTag>
+							</imageTags>
+							<forceTags>true</forceTags>
+							<pushImage>true</pushImage>
+							<squashRunCommands>true</squashRunCommands>
+							<retryPushCount>0</retryPushCount>
+							<skipDocker>false</skipDocker>
+							<buildArgs>
+								<REGISTRY_ADDRESS>${docker.registry.server}</REGISTRY_ADDRESS>
+							</buildArgs>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>elasticsearch</id>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+						<configuration>
+							<dockerDirectory>${project.basedir}/src/docker/infra/elastic</dockerDirectory>
+							<serverId>${docker.registry.server.id}</serverId>
+							<imageName>${docker.registry.server}/elastic</imageName>
+							<imageTags>
+								<imageTag>${project.version}</imageTag>
+								<imageTag>latest</imageTag>
+							</imageTags>
+							<forceTags>true</forceTags>
+							<pushImage>true</pushImage>
+							<squashRunCommands>true</squashRunCommands>
+							<retryPushCount>0</retryPushCount>
+							<skipDocker>false</skipDocker>
+							<buildArgs>
+								<REGISTRY_ADDRESS>${docker.registry.server}</REGISTRY_ADDRESS>
+							</buildArgs>
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

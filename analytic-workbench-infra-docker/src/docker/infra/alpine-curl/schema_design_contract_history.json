@@ -1,0 +1,15 @@
+{
+   "_id": "_design/contract_history",
+   "views": {
+       "all": {
+           "map": "function(doc) { if (doc.type == 'contractHistory') { emit(doc.contractDocumentId, doc); if (doc.children != null) { for (var child in doc.children) { emit(doc.children[child], doc); } } } }"
+       },
+       "allJoined": {
+           "map": "function(doc) {if (doc.type == 'contractHistory') {emit([doc.contractDocumentId, 1, doc.modifiedOn], [doc.contractName, doc.modifiedOn]);}if(doc.type == 'contract') {emit([doc._id, 0, doc.modifiedOn], [doc.contractName, doc.modifiedOn]);} }"
+       },
+       "simple": {
+           "map": "function(doc) {if (doc.type == 'contractHistory') {emit(doc.contractDocumentId,{_id : doc._id, message : doc.auditHistory.message, modifiedBy : doc.modifiedBy, modifiedOn : doc.modifiedOn  });}}"
+       }
+   },
+   "language": "javascript"
+}
