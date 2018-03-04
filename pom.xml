@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	
+	<name>Analytic Workbench - Infra - Model</name>
+	
+	<parent>
+		<groupId>io.scipionyx.analyticworkbench</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+	</dependencies>
+
+	<packaging>pom</packaging>
+	<modules>
+		<module>analytic-workbench-infra-api</module>
+		<module>analytic-workbench-infra-backend</module>
+		<module>analytic-workbench-infra-config-server</module>
+		<module>analytic-workbench-infra-docker</module>
+		<module>analytic-workbench-infra-elastic</module>
+		<module>analytic-workbench-infra-frontend</module>
+		<module>analytic-workbench-infra-gateway</module>
+		<module>analytic-workbench-infra-geolocation</module>
+		<module>analytic-workbench-infra-json</module>
+		<module>analytic-workbench-infra-model</module>
+	</modules>
+	<groupId>io.scipionyx.analyticworkbench</groupId>
+	<artifactId>parent</artifactId>
+</project>

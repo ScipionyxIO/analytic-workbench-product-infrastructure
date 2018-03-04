@@ -3,37 +3,21 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>spring-cloud-config-server</artifactId>
-	
-	<name>Analytic Workbench - Infra - Spring Cloud Configuration Server</name>
+	<artifactId>docker</artifactId>
+
+	<packaging>pom</packaging>
+
+	<name>Analytic Workbench - Infra - Docker</name>
 
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench.infra</groupId>
-		<artifactId>parent</artifactId>
+		<artifactId>model</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
-		</dependency>
-	</dependencies>
-
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludeDevtools>true</excludeDevtools>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
@@ -46,9 +30,9 @@
 							<goal>build</goal>
 						</goals>
 						<configuration>
-							<dockerDirectory>${project.basedir}</dockerDirectory>
+							<dockerDirectory>${project.basedir}/src/docker/spring-boot</dockerDirectory>
 							<serverId>${docker.registry.server.id}</serverId>
-							<imageName>${docker.registry.server}/${project.artifactId}</imageName>
+							<imageName>${docker.registry.server.id}/analytic-workbench/product/analytic-workbench-infra/spring-boot</imageName>
 							<imageTags>
 								<imageTag>${project.version}</imageTag>
 								<imageTag>latest</imageTag>
@@ -60,10 +44,35 @@
 							<skipDocker>false</skipDocker>
 							<buildArgs>
 								<REGISTRY_ADDRESS>${docker.registry.server}</REGISTRY_ADDRESS>
-								<JAR_NAME>${project.artifactId}-${project.version}.jar</JAR_NAME>
 							</buildArgs>
 						</configuration>
 					</execution>
+
+					<execution>
+						<id>elasticsearch</id>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+						<configuration>
+							<dockerDirectory>${project.basedir}/src/docker/infra/elastic</dockerDirectory>
+							<serverId>${docker.registry.server.id}</serverId>
+							<imageName>${docker.registry.server}/elastic</imageName>
+							<imageTags>
+								<imageTag>${project.version}</imageTag>
+								<imageTag>latest</imageTag>
+							</imageTags>
+							<forceTags>true</forceTags>
+							<pushImage>true</pushImage>
+							<squashRunCommands>true</squashRunCommands>
+							<retryPushCount>0</retryPushCount>
+							<skipDocker>false</skipDocker>
+							<buildArgs>
+								<REGISTRY_ADDRESS>${docker.registry.server}</REGISTRY_ADDRESS>
+							</buildArgs>
+						</configuration>
+					</execution>
+
 				</executions>
 			</plugin>
 		</plugins>
