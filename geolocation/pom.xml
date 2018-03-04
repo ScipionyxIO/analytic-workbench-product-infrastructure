@@ -5,7 +5,7 @@
 
 	<artifactId>geolocation</artifactId>
 
-	<name>Analytic Workbench - Infra - Geolocation</name>
+	<name>AnalyticWorkbench - Product - Infrastructure - Geolocation</name>
 
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>

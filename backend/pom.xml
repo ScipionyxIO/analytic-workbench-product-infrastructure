@@ -5,7 +5,7 @@
 
 	<artifactId>backend</artifactId>
 
-	<name>Analytic Workbench - Infra - Backend</name>
+	<name>AnalyticWorkbench - Product - Infrastructure - Backend</name>
 
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
@@ -27,7 +27,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.scipionyx.analyticworkbench.infra</groupId>
+			<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
 			<artifactId>model</artifactId>
 		</dependency>
 

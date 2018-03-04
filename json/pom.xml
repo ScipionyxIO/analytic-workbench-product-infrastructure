@@ -5,7 +5,7 @@
 
 	<artifactId>json</artifactId>
 
-	<name>Analytic Workbench - Infra - Json</name>
+	<name>AnalyticWorkbench - Product - Infrastructure - Json</name>
 
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>

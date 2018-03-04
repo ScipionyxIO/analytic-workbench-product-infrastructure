@@ -5,7 +5,7 @@
 
 	<artifactId>api</artifactId>
 
-	<name>Analytic Workbench - Infra - API</name>
+	<name>AnalyticWorkbench - Product - Infrastructure - API</name>
 
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>

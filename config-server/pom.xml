@@ -5,7 +5,7 @@
 
 	<artifactId>spring-cloud-config-server</artifactId>
 	
-	<name>Analytic Workbench - Infra - Spring Cloud Configuration Server</name>
+	<name>AnalyticWorkbench - Product - Infrastructure - Spring Cloud Configuration Server</name>
 
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>

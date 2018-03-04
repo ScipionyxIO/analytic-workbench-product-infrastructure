@@ -5,7 +5,7 @@
 
 	<artifactId>frontend</artifactId>
 
-	<name>Analytic Workbench - Infra - Frontend</name>
+	<name>AnalyticWorkbench - Product - Infrastructure - Frontend</name>
 
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>

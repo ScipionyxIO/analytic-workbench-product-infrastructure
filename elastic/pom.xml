@@ -5,7 +5,7 @@
 
 	<artifactId>elastic</artifactId>
 
-	<name>Analytic Workbench - Infra - Elastic</name>
+	<name>AnalyticWorkbench - Product - Infrastructure - Elastic</name>
 
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>

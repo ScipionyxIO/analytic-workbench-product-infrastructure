@@ -5,7 +5,7 @@
 
 	<artifactId>gateway</artifactId>
 
-	<name>Analytic Workbench - Infra - Gateway</name>
+	<name>AnalyticWorkbench - Product - Infrastructure - Gateway</name>
 
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
@@ -28,7 +28,7 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>io.scipionyx.analyticworkbench.infra</groupId>
+			<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
 			<artifactId>model</artifactId>
 		</dependency>
 	</dependencies>

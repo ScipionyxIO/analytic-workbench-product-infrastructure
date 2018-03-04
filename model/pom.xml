@@ -5,7 +5,7 @@
 	
 	<artifactId>model</artifactId>
 	
-	<name>Analytic Workbench - Infra - Model</name>
+	<name>AnalyticWorkbench - Product - Infrastructure - Model</name>
 	
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>

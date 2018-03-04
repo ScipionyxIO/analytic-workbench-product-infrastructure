@@ -1,17 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
-	
-	
-	<name>Analytic Workbench - Product - Infrastructure</name>
-	
+
+	<name>AnalyticWorkbench - Product - Infrastructure</name>
+
+	<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
+
+	<artifactId>parent</artifactId>
+
+	<packaging>pom</packaging>
+
 	<parent>
 		<groupId>io.scipionyx.analyticworkbench</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -23,9 +28,16 @@
 		</dependency>
 	</dependencies>
 
-	<packaging>pom</packaging>
-	<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
-	<artifactId>parent</artifactId>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
+				<artifactId>model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<modules>
 		<module>api</module>
 		<module>backend</module>
@@ -38,4 +50,5 @@
 		<module>json</module>
 		<module>model</module>
 	</modules>
+	
 </project>
