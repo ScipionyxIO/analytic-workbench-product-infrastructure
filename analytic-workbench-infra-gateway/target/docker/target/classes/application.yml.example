@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: analytic_workbench_backend_gateway    
+    admin:
+      enabled: true
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.99.101:9300
+      cluster-name: elasticsearch
+        
+server:
+  port: 55500
+    
+zuul:
+  routes:
+    core:
+      path: /core/**
+      stripPrefix: true
+      url: http://localhost:55501
+      retryable: true
+    expert:
+      path: /expert/**
+      stripPrefix: true
+      url: http://localhost:55502
+      retryable: true
+    explore:
+      path: /explore/**
+      stripPrefix: true
+      url: http://localhost:55503
+      retryable: true
+      
+ribbon:
+  eureka:
+    enabled: false

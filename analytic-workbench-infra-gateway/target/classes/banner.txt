@@ -1,0 +1,27 @@
+                                                                                                                                                                                                                  
+       db                                  88                        88                 I8,        8        ,8I                         88         88                                                88           
+      d88b                                 88                 ,d     ""                 `8b       d8b       d8'                         88         88                                                88           
+     d8'`8b                                88                 88                         "8,     ,8"8,     ,8"                          88         88                                                88           
+    d8'  `8b      8b,dPPYba,   ,adPPYYba,  88  8b       d8  MM88MMM  88   ,adPPYba,       Y8     8P Y8     8P   ,adPPYba,   8b,dPPYba,  88   ,d8   88,dPPYba,    ,adPPYba,  8b,dPPYba,    ,adPPYba,  88,dPPYba,   
+   d8YaaaaY8b     88P'   `"8a  ""     `Y8  88  `8b     d8'    88     88  a8"     ""       `8b   d8' `8b   d8'  a8"     "8a  88P'   "Y8  88 ,a8"    88P'    "8a  a8P_____88  88P'   `"8a  a8"     ""  88P'    "8a  
+  d8""""""""8b    88       88  ,adPPPPP88  88   `8b   d8'     88     88  8b                `8a a8'   `8a a8'   8b       d8  88          8888[      88       d8  8PP"""""""  88       88  8b          88       88  
+ d8'        `8b   88       88  88,    ,88  88    `8b,d8'      88,    88  "8a,   ,aa         `8a8'     `8a8'    "8a,   ,a8"  88          88`"Yba,   88b,   ,a8"  "8b,   ,aa  88       88  "8a,   ,aa  88       88  
+d8'          `8b  88       88  `"8bbdP"Y8  88      Y88'       "Y888  88   `"Ybbd8"'          `8'       `8'      `"YbbdP"'   88          88   `Y8a  8Y"Ybbd8"'    `"Ybbd8"'  88       88   `"Ybbd8"'  88       88  
+                                                   d8'                                                                                                                                                            
+                                                  d8'                                                                                                                                                             
+                                                                                                                                                                                                                  
+88888888ba                           88                                          88                    ,ad8888ba,                                                                                                 
+88      "8b                          88                                          88                   d8"'    `"8b                ,d                                                                              
+88      ,8P                          88                                          88                  d8'                          88                                                                              
+88aaaaaa8P'  ,adPPYYba,   ,adPPYba,  88   ,d8   ,adPPYba,  8b,dPPYba,    ,adPPYb,88                  88             ,adPPYYba,  MM88MMM  ,adPPYba,  8b      db      d8  ,adPPYYba,  8b       d8                   
+88""""""8b,  ""     `Y8  a8"     ""  88 ,a8"   a8P_____88  88P'   `"8a  a8"    `Y88     aaaaaaaa     88      88888  ""     `Y8    88    a8P_____88  `8b    d88b    d8'  ""     `Y8  `8b     d8'                   
+88      `8b  ,adPPPPP88  8b          8888[     8PP"""""""  88       88  8b       88     """"""""     Y8,        88  ,adPPPPP88    88    8PP"""""""   `8b  d8'`8b  d8'   ,adPPPPP88   `8b   d8'                    
+88      a8P  88,    ,88  "8a,   ,aa  88`"Yba,  "8b,   ,aa  88       88  "8a,   ,d88                   Y8a.    .a88  88,    ,88    88,   "8b,   ,aa    `8bd8'  `8bd8'    88,    ,88    `8b,d8'                     
+88888888P"   `"8bbdP"Y8   `"Ybbd8"'  88   `Y8a  `"Ybbd8"'  88       88   `"8bbdP"Y8                    `"Y88888P"   `"8bbdP"Y8    "Y888  `"Ybbd8"'      YP      YP      `"8bbdP"Y8      Y88'                      
+                                                                                                                                                                                        d8'                       
+                                                                                                                                                                                       d8'                        
+                                                                                                                                                                                       
+Version		: ${application.version}
+Spring Boot	: ${spring-boot.version}                                                                
+
+(Univers)
