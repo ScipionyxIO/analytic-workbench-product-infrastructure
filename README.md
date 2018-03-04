@@ -1,1 +1,1 @@
-# analytic-workbench-product-infrastructure
+# Analytic Workbench - Infrastructure
