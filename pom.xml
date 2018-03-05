@@ -19,6 +19,7 @@
 
 	<properties>
 		<docker.registry.server.id>hub.docker.com</docker.registry.server.id>
+		<docker.registry.base>scipionyxio</docker.registry.base>
 	</properties>
 
 	<dependencies>
