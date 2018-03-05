@@ -10,4 +10,31 @@
 		</server>
 	</servers>
 
+	<profiles>
+		<profile>
+			<id>scipionyx</id>
+			<repositories>
+				<repository>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<id>scipionyx-nexus-releases</id>
+					<url>http://nexus.scipionyx.org/repository/scipionyx-maven-release</url>
+				</repository>
+				<repository>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+					</snapshots>
+					<id>scipionyx-nexus-snapshot</id>
+					<url>http://nexus.scipionyx.org/repository/scipionyx-maven-snapshot</url>
+				</repository>
+			</repositories>
+		</profile>
+	</profiles>
+
+	<activeProfiles>
+		<activeProfile>scipionyx</activeProfile>
+	</activeProfiles>
+
 </settings>
