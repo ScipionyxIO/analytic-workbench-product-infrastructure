@@ -6,6 +6,10 @@ notifications:
   email:
     - renato.mendes.1123@gmail.com
 
+branches:
+  only:
+    - 0.0.1
+
 jdk:
   - openjdk8
   
