@@ -56,4 +56,5 @@
 		<module>config-server</module>
 	</modules>
 
+	<url>http://www.scipionyx.org</url>
 </project>
