@@ -1,5 +1,5 @@
-ARG REGISTRY_ADDRESS=192.168.99.100:5000
-FROM ${REGISTRY_ADDRESS}/spring-boot
+ARG REGISTRY_BASE=scipionyxio
+FROM ${REGISTRY_BASE}/infrastructure-spring-boot
 
 LABEL maintainer "Renato Mendes rmendes@scipionyx.io"
 

@@ -56,7 +56,7 @@
 						<configuration>
 							<dockerDirectory>${project.basedir}</dockerDirectory>
 							<serverId>${docker.registry.server.id}</serverId>
-							<imageName>${docker.registry.server}/${project.artifactId}</imageName>
+							<imageName>${docker.registry.base}/infrastructure-${project.artifactId}</imageName>
 							<imageTags>
 								<imageTag>${project.version}</imageTag>
 								<imageTag>latest</imageTag>

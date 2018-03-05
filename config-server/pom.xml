@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>spring-cloud-config-server</artifactId>
-	
+
 	<name>AnalyticWorkbench - Product - Infrastructure - Spring Cloud Configuration Server</name>
 
 	<parent>
@@ -48,7 +48,7 @@
 						<configuration>
 							<dockerDirectory>${project.basedir}</dockerDirectory>
 							<serverId>${docker.registry.server.id}</serverId>
-							<imageName>${docker.registry.server.id}/${project.artifactId}</imageName>
+							<imageName>${docker.registry.base}/infrastructure-${project.artifactId}</imageName>
 							<imageTags>
 								<imageTag>${project.version}</imageTag>
 								<imageTag>latest</imageTag>
@@ -59,7 +59,6 @@
 							<retryPushCount>0</retryPushCount>
 							<skipDocker>false</skipDocker>
 							<buildArgs>
-								<REGISTRY_ADDRESS>${docker.registry.server.id}</REGISTRY_ADDRESS>
 								<JAR_NAME>${project.artifactId}-${project.version}.jar</JAR_NAME>
 							</buildArgs>
 						</configuration>
