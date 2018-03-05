@@ -31,8 +31,10 @@
 						</goals>
 						<configuration>
 							<dockerDirectory>${project.basedir}/src/docker/spring-boot</dockerDirectory>
-							<serverId>${docker.registry.server.id}</serverId>
-							<imageName>${docker.registry.server.id}/analytic-workbench/product/analytic-workbench-infra/spring-boot</imageName>
+							<serverId>hub.docker.com</serverId>
+							<!-- <serverId>${docker.registry.server}</serverId> -->
+							<!-- <imageName>${docker.registry.server}/analytic-workbench/product/analytic-workbench-infra/spring-boot</imageName> -->
+							<imageName>scipionyxio/infrastructure-spring-boot</imageName>
 							<imageTags>
 								<imageTag>${project.version}</imageTag>
 								<imageTag>latest</imageTag>
@@ -43,7 +45,7 @@
 							<retryPushCount>0</retryPushCount>
 							<skipDocker>false</skipDocker>
 							<buildArgs>
-								<REGISTRY_ADDRESS>${docker.registry.server}</REGISTRY_ADDRESS>
+								<!-- <REGISTRY_ADDRESS>${docker.registry.server}</REGISTRY_ADDRESS> -->
 							</buildArgs>
 						</configuration>
 					</execution>
@@ -56,8 +58,9 @@
 						</goals>
 						<configuration>
 							<dockerDirectory>${project.basedir}/src/docker/infra/elastic</dockerDirectory>
-							<serverId>${docker.registry.server.id}</serverId>
-							<imageName>${docker.registry.server}/elastic</imageName>
+							<serverId>hub.docker.com</serverId>
+							<!-- <serverId>${docker.registry.server}</serverId> -->
+							<imageName>scipionyxio/infrastructure-elastic</imageName>
 							<imageTags>
 								<imageTag>${project.version}</imageTag>
 								<imageTag>latest</imageTag>
@@ -68,7 +71,7 @@
 							<retryPushCount>0</retryPushCount>
 							<skipDocker>false</skipDocker>
 							<buildArgs>
-								<REGISTRY_ADDRESS>${docker.registry.server}</REGISTRY_ADDRESS>
+								<!-- <REGISTRY_ADDRESS>${docker.registry.server}</REGISTRY_ADDRESS> -->
 							</buildArgs>
 						</configuration>
 					</execution>
