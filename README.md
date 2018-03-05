@@ -1,17 +1,18 @@
 # Analytic Workbench - Infrastructure
 
-| Version  |      Travis   | 
-|----------|:-------------:|
-| Master   | [![Build Status](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure.svg?branch=master)](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure) | 
-| 0.0.1 	   | [![Build Status](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure.svg?branch=0.0.1)](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure) |
-
+| Version | Travis | 
+|:--------|:------:|
+| Master  | [![Build Status](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure.svg?branch=master)](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure) | 
+| 0.0.1   | [![Build Status](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure.svg?branch=0.0.1)](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure) |
 
 ## Motivation
 This project will house all infrastructure project that will support all microservices.
+
 ## Projects
 - Docker
 - Elastic
 - Gateway
+
 ## Docker
 The following configuration should be provided under Maven's settings.xml
 
@@ -24,11 +25,11 @@ The following configuration should be provided under Maven's settings.xml
 	</servers>
 	
 ## Gateway
+
 ### Provides
 This component provides the following services:
 - Zuul Gateway
 - Authorization Server
-
 
 ### Authorization Server ()
 End points for the Authorization Server:
