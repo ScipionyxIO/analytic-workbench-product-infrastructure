@@ -2,6 +2,10 @@ language: java
 
 sudo: false
 
+notifications:
+  email:
+    - renato.mendes.1123@gmail.com
+
 jdk:
   - openjdk8
   
