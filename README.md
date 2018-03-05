@@ -1,5 +1,11 @@
 # Analytic Workbench - Infrastructure
-[![Build Status](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure.svg?branch=0.0.1)](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure)
+
+| Version  |      Travis   | 
+|----------|:-------------:|
+| Master   | [![Build Status](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure.svg?branch=master)](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure) | 
+| 0.0.1 	   | [![Build Status](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure.svg?branch=0.0.1)](https://travis-ci.org/ScipionyxIO/analytic-workbench-product-infrastructure) |
+
+
 ## Motivation
 This project will house all infrastructure project that will support all microservices.
 ## Projects
