@@ -23,7 +23,7 @@ This component provides the following services:
 - Authorization Server
 
 
-### Authorization Server
+### Authorization Server ()
 End points for the Authorization Server:
 * /oauth/authorize 
 * /oauth/authorize,	methods=[POST],		params=[user_oauth_approval]
