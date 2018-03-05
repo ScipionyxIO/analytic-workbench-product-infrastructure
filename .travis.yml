@@ -19,4 +19,5 @@ before_install:
 install: true
 
 script: 
+  - ls -l
   - mvn install
