@@ -2,12 +2,47 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
-  <servers>
+	<servers>
+	
 		<server>
 			<id>hub.docker.com</id>
-			<username>scipionyx</username>
-			<password>soeusei11</password>
+			<username>${env.docker_username}</username>
+			<password>${env.docker_password}</password>
 		</server>
+		
+		<server>
+			<id>scipionyx-nexus-snapshot</id>
+			<username>${env.nexus_username}</username>
+			<password>${env.nexus_password}</password>
+		</server>
+		
 	</servers>
+
+	<profiles>
+		<profile>
+			<id>scipionyx</id>
+			<repositories>
+				<repository>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<id>scipionyx-nexus-releases</id>
+					<url>http://nexus.scipionyx.org/repository/scipionyx-maven-release</url>
+				</repository>
+				<repository>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+					</snapshots>
+					<id>scipionyx-nexus-snapshot</id>
+					<url>http://nexus.scipionyx.org/repository/scipionyx-maven-snapshot</url>
+				</repository>
+			</repositories>
+		</profile>
+	</profiles>
+
+	<activeProfiles>
+		<activeProfile>scipionyx</activeProfile>
+	</activeProfiles>
 
 </settings>

@@ -17,11 +17,6 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<properties>
-		<docker.registry.server.id>hub.docker.com</docker.registry.server.id>
-		<docker.registry.base>scipionyxio</docker.registry.base>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -40,6 +35,11 @@
 				<artifactId>model</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
+				<artifactId>json</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -56,4 +56,5 @@
 		<module>config-server</module>
 	</modules>
 
+	<url>http://www.scipionyx.org</url>
 </project>

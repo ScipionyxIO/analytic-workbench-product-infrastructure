@@ -15,22 +15,18 @@
 	</parent>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
 		</dependency>
-
 		<dependency>
-			<groupId>io.scipionyx.analyticworkbench.infra</groupId>
+			<groupId>io.scipionyx.analyticworkbench.infrastructure</groupId>
 			<artifactId>json</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>io.github.lukehutch</groupId>
 			<artifactId>fast-classpath-scanner</artifactId>
 		</dependency>
-
 	</dependencies>
 
 </project>
