@@ -37,5 +37,5 @@ deploy:
     on:
       #tags: true
       branch: 
-        - 0.0.1
+        - "0.0.1"
   
