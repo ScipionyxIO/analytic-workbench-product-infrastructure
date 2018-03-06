@@ -24,13 +24,14 @@ install:
   
 before_deploy:
   - mkdir $HOME/.kube
-  - cp .travis.k8.config-development $HOME/.kube/config  
+  
   
 deploy:
-  deploy:
-  provider: script
-  script: 
-    - ls -l
-  on:
-    branch: 0.0.1
+  - provider: script
+    script:
+      - cp .travis.k8.config-development $HOME/.kube/config   
+      - ls -l
+    on:
+      tags: true
+      branch: all
   
