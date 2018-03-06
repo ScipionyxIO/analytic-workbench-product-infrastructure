@@ -22,3 +22,15 @@ before_install:
 install: 
   - mvn deploy
   
+before_deploy:
+  - mkdir $HOME/.kube
+  - cp .travis.k8.config-development $HOME/.kube/config  
+  
+deploy:
+  deploy:
+  provider: script
+  script: 
+    - ls -l
+  on:
+    branch: 0.0.1
+  
