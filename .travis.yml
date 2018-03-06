@@ -36,5 +36,6 @@ deploy:
       - kubectl create -f config-server/src/main/k8/infrastructure-config-server.yaml
     on:
       #tags: true
-      branch: all
+      branch: 
+        - 0.0.1
   
