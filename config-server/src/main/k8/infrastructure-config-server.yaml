@@ -1,0 +1,32 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: scipionyx-config-server
+  labels:
+    app: scipionyx-config-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: scipionyx-config-server
+    spec:
+      containers:
+        - name: scipionyx-config-server
+          image: registry.gitlab.com/analytic-workbench/product/analytic-workbench-infra/spring-cloud-config-server:0.0.1-SNAPSHOT
+          ports:
+            - containerPort: 8888
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: scipionyx-config-server
+  labels:
+    k8s-app: scipionyx-config-server
+spec:
+  selector:
+    app: scipionyx-config-server
+  ports:
+    - protocol: TCP
+      port: 8888
+      targetPort: 8888

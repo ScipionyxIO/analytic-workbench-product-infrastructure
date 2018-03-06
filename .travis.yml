@@ -24,14 +24,17 @@ install:
   
 before_deploy:
   - mkdir $HOME/.kube
-  
+  - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  - chmod +x ./kubectl
+  - sudo mv ./kubectl /usr/local/bin/kubectl
   
 deploy:
   - provider: script
     script:
-      - cp .travis.k8.config-development $HOME/.kube/config   
+      - cp .travis.k8.config-infrastructure $HOME/.kube/config   
       - ls -l
+      - kubectl create -f config-server/src/main/k8/infrastructure-config-server.yaml
     on:
-      tags: true
+      #tags: true
       branch: all
   
